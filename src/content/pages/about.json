@@ -1,0 +1,29 @@
+{
+  "title": "About — Citadel CX",
+  "description": "Citadel CX is a Canadian company delivering customer support through a team in Lagos and managed infrastructure hosted in Canada.",
+  "headline": "We started with the security problem.",
+  "standfirst": "Outsourced support usually works because everybody agrees not to look too closely at how it is delivered. We wanted to build the version that holds up when somebody does look.",
+
+  "placeHeading": "Where we are",
+  "placeBody": "Citadel CX is a Canadian company based in Calgary, Alberta, and our infrastructure runs in Canadian cloud regions. Our support team is based in Lagos, Nigeria, working from a managed office on company equipment. We say so openly, because you should know where your customer conversations are handled — and because how we deliver the work is the part we are most confident about.",
+
+  "beliefsHeading": "What we hold to",
+  "beliefs": [
+    {
+      "title": "Say the accurate thing",
+      "body": "It is easy to overstate what an architecture guarantees. We would rather describe our controls precisely and have them survive scrutiny."
+    },
+    {
+      "title": "Good support is judgment",
+      "body": "The contacts that matter are the ones no script anticipated. Hiring well and training properly is not an overhead we try to avoid."
+    },
+    {
+      "title": "Controls before scale",
+      "body": "The security model came first and the service was built on top of it. That order is harder at the start and much easier afterwards."
+    }
+  ],
+
+  "closeHeading": "Early days",
+  "closeBody": "We are a new company taking on our first clients. If you are weighing support options and want to talk to the people actually building this, that is exactly who you will get.",
+  "closeAction": { "label": "Talk to us", "href": "/contact" }
+}

@@ -1,0 +1,61 @@
+{
+  "title": "Citadel CX \u2014 support that holds the line",
+  "description": "Citadel CX handles the customer conversations automation cannot finish, with trained agents working inside your systems from a controlled environment hosted in Canada.",
+  "headline": "Support that holds the line.",
+  "standfirst": "Citadel CX takes on the customer conversations your automation cannot finish. Trained agents, working inside the tools you already run, from an environment built to be inspected.",
+  "primaryAction": {
+    "label": "Start a conversation",
+    "href": "/contact"
+  },
+  "secondaryAction": {
+    "label": "How it works",
+    "href": "/how-it-works"
+  },
+  "specHeading": "At a glance",
+  "spec": [
+    {
+      "label": "Channels",
+      "value": "Email, chat, voice"
+    },
+    {
+      "label": "Cover",
+      "value": "North American hours"
+    },
+    {
+      "label": "Desktops",
+      "value": "Hosted in Canada"
+    },
+    {
+      "label": "Agent devices",
+      "value": "Store nothing"
+    },
+    {
+      "label": "Access",
+      "value": "Revoked in seconds"
+    }
+  ],
+  "caseHeading": "Automation handles the easy half.",
+  "caseBody": "Order status, password resets, opening hours \u2014 software answers those well and cheaply. What reaches a person now is the exception, the complaint, the request that does not fit the script. Those conversations decide whether a customer stays, and they need somebody who can think rather than retrieve.",
+  "controlsHeading": "Most outsourced support asks you to take security on trust.",
+  "controlsBody": "Agents on personal laptops, files downloaded locally, access that lingers long after someone leaves. We built the delivery model first and the service on top of it.",
+  "controls": [
+    {
+      "title": "Nothing lands on the endpoint",
+      "body": "Agents work through a virtual desktop. No downloads, no local storage, no route out of the session. The machine in front of them holds nothing of yours."
+    },
+    {
+      "title": "Hosted in Canada",
+      "body": "Desktops and working data sit in Canadian cloud infrastructure, so you know where your systems are and can tell your own customers the same."
+    },
+    {
+      "title": "Access that genuinely ends",
+      "body": "Every agent has a managed identity. Revoking it takes seconds, applies everywhere at once, and leaves a record of who reached what."
+    }
+  ],
+  "closeHeading": "Tell us what your support looks like now.",
+  "closeBody": "Whether you handle it yourself, are weighing a first hire, or already outsource and regret it \u2014 we would like to hear about it.",
+  "closeAction": {
+    "label": "Get in touch",
+    "href": "/contact"
+  }
+}

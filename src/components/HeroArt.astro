@@ -1,0 +1,52 @@
+---
+// Hero artwork — the delivery model drawn as a diagram of itself.
+// Agent terminals on the left hold nothing; the enclosure holds the
+// live sessions and the data, and sits on Canadian ground.
+---
+<svg class="hero-art" viewBox="0 0 460 400" role="img" aria-labelledby="art-t art-d">
+  <title id="art-t">The Citadel CX delivery model</title>
+  <desc id="art-d">Agent terminals on the left connect into a secured enclosure that holds the active sessions and client data, hosted in Canada.</desc>
+
+  <!-- agent terminals: outlines, holding nothing -->
+  <g class="art-term">
+    <rect x="8" y="88"  width="56" height="40" rx="3" />
+    <rect x="8" y="180" width="56" height="40" rx="3" />
+    <rect x="8" y="272" width="56" height="40" rx="3" />
+  </g>
+
+  <!-- connections inward -->
+  <g class="art-beam">
+    <path d="M70 108 H120" />
+    <path d="M70 200 H120" />
+    <path d="M70 292 H120" />
+  </g>
+
+  <!-- the enclosure -->
+  <g class="art-bracket">
+    <path d="M158 40 H126 V360 H158" />
+    <path d="M402 40 H434 V360 H402" />
+  </g>
+
+  <!-- live sessions held inside -->
+  <g class="art-plate">
+    <rect x="146" y="80"  width="242" height="54" rx="5" />
+    <rect x="146" y="148" width="242" height="54" rx="5" />
+    <rect x="146" y="216" width="242" height="54" rx="5" />
+  </g>
+
+  <g class="art-tick">
+    <rect x="166" y="101" width="30" height="4" rx="2" />
+    <rect x="166" y="169" width="30" height="4" rx="2" />
+    <rect x="166" y="237" width="30" height="4" rx="2" />
+  </g>
+
+  <g class="art-dim">
+    <rect x="210" y="102" width="118" height="3" rx="1.5" />
+    <rect x="210" y="170" width="92"  height="3" rx="1.5" />
+    <rect x="210" y="238" width="140" height="3" rx="1.5" />
+  </g>
+
+  <!-- the ground it sits on -->
+  <rect class="art-base" x="146" y="296" width="242" height="6" rx="3" />
+  <text class="art-label" x="267" y="328" text-anchor="middle">Hosted in Canada</text>
+</svg>

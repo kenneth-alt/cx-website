@@ -1,0 +1,198 @@
+backend:
+  name: github
+  repo: YOUR-GITHUB-USERNAME/citadelcx
+  branch: main
+
+site_url: https://www.citadelcx.com
+display_url: https://www.citadelcx.com
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: pages
+    label: Pages
+    files:
+      - name: home
+        label: Home
+        file: src/content/pages/home.json
+        format: json
+        fields:
+          - { name: title, label: Browser tab title, widget: string }
+          - { name: description, label: Search description, widget: text }
+          - { name: headline, label: Headline, widget: string }
+          - { name: standfirst, label: Opening paragraph, widget: text }
+          - name: primaryAction
+            label: Main button
+            widget: object
+            fields:
+              - { name: label, label: Button text, widget: string }
+              - { name: href, label: Goes to, widget: string }
+          - name: secondaryAction
+            label: Second button
+            widget: object
+            fields:
+              - { name: label, label: Button text, widget: string }
+              - { name: href, label: Goes to, widget: string }
+          - { name: specHeading, label: Panel heading, widget: string, hint: 'Read out by screen readers; not shown on the page' }
+          - name: spec
+            label: At-a-glance rows
+            widget: list
+            summary: '{{fields.label}} — {{fields.value}}'
+            fields:
+              - { name: label, label: Left side, widget: string }
+              - { name: value, label: Right side, widget: string }
+          - { name: caseHeading, label: Section 2 heading, widget: string }
+          - { name: caseBody, label: Section 2 text, widget: text }
+          - { name: controlsHeading, label: Section 3 heading, widget: string }
+          - { name: controlsBody, label: Section 3 text, widget: text }
+          - name: controls
+            label: Section 3 points
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: body, label: Text, widget: text }
+          - { name: closeHeading, label: Closing heading, widget: string }
+          - { name: closeBody, label: Closing text, widget: text }
+          - name: closeAction
+            label: Closing button
+            widget: object
+            fields:
+              - { name: label, label: Button text, widget: string }
+              - { name: href, label: Goes to, widget: string }
+
+      - name: how_it_works
+        label: How it works
+        file: src/content/pages/how-it-works.json
+        format: json
+        fields:
+          - { name: title, label: Browser tab title, widget: string }
+          - { name: description, label: Search description, widget: text }
+          - { name: headline, label: Headline, widget: string }
+          - { name: standfirst, label: Opening paragraph, widget: text }
+          - { name: sequenceHeading, label: Steps heading, widget: string }
+          - name: stages
+            label: Steps
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { name: title, label: Step title, widget: string }
+              - { name: body, label: Step text, widget: text }
+          - { name: controlsHeading, label: Controls heading, widget: string }
+          - name: controls
+            label: Controls
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: body, label: Text, widget: text }
+          - { name: asideBody, label: Highlighted note, widget: text }
+          - { name: closeHeading, label: Closing heading, widget: string }
+          - { name: closeBody, label: Closing text, widget: text }
+          - name: closeAction
+            label: Closing button
+            widget: object
+            fields:
+              - { name: label, label: Button text, widget: string }
+              - { name: href, label: Goes to, widget: string }
+
+      - name: about
+        label: About
+        file: src/content/pages/about.json
+        format: json
+        fields:
+          - { name: title, label: Browser tab title, widget: string }
+          - { name: description, label: Search description, widget: text }
+          - { name: headline, label: Headline, widget: string }
+          - { name: standfirst, label: Opening paragraph, widget: text }
+          - { name: placeHeading, label: Location heading, widget: string }
+          - { name: placeBody, label: Location text, widget: text }
+          - { name: beliefsHeading, label: Values heading, widget: string }
+          - name: beliefs
+            label: Values
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: body, label: Text, widget: text }
+          - { name: closeHeading, label: Closing heading, widget: string }
+          - { name: closeBody, label: Closing text, widget: text }
+          - name: closeAction
+            label: Closing button
+            widget: object
+            fields:
+              - { name: label, label: Button text, widget: string }
+              - { name: href, label: Goes to, widget: string }
+
+      - name: careers
+        label: Careers
+        file: src/content/pages/careers.json
+        format: json
+        fields:
+          - { name: title, label: Browser tab title, widget: string }
+          - { name: description, label: Search description, widget: text }
+          - { name: headline, label: Headline, widget: string }
+          - { name: standfirst, label: Opening paragraph, widget: text }
+          - { name: interestAction, label: Main button text, widget: string }
+          - { name: workHeading, label: The work heading, widget: string }
+          - { name: workBody, label: The work text, widget: text }
+          - { name: offerHeading, label: What we provide heading, widget: string }
+          - name: offer
+            label: What we provide
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: body, label: Text, widget: text }
+          - { name: rolesHeading, label: Roles heading, widget: string }
+          - { name: rolesEmpty, label: Text shown when no roles are open, widget: text }
+          - { name: interestLead, label: Note before the email address, widget: text, hint: 'Shown when no roles are open' }
+          - { name: interestTail, label: Note after the email address, widget: text, hint: 'Shown when no roles are open' }
+          - { name: roleAction, label: Button text on each role, widget: string }
+          - { name: applyEmail, label: Applications email, widget: string }
+
+      - name: contact
+        label: Contact
+        file: src/content/pages/contact.json
+        format: json
+        fields:
+          - { name: title, label: Browser tab title, widget: string }
+          - { name: description, label: Search description, widget: text }
+          - { name: headline, label: Headline, widget: string }
+          - { name: standfirst, label: Opening paragraph, widget: text }
+          - name: facts
+            label: Contact details
+            widget: list
+            summary: '{{fields.label}} — {{fields.value}}'
+            fields:
+              - { name: label, label: Label, widget: string }
+              - { name: value, label: Value, widget: string }
+              - { name: href, label: Link (optional), widget: string, required: false }
+          - { name: helpHeading, label: Tips heading, widget: string }
+          - { name: helpBody, label: Tips text, widget: text }
+          - name: help
+            label: Tips
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { name: title, label: Title, widget: string }
+              - { name: body, label: Text, widget: text }
+
+  - name: jobs
+    label: Job openings
+    label_singular: Job opening
+    folder: src/content/jobs
+    extension: md
+    format: frontmatter
+    create: true
+    delete: true
+    slug: '{{year}}-{{month}}-{{slug}}'
+    summary: '{{title}} — {{location}}'
+    fields:
+      - { name: title, label: Job title, widget: string }
+      - { name: location, label: Location, widget: string, default: 'Lagos, Nigeria' }
+      - { name: type, label: Type, widget: select, options: ['Full time', 'Part time', 'Contract'], default: 'Full time' }
+      - { name: applyUrl, label: Application link, widget: string, required: false, hint: 'Where the Apply button sends people. Leave empty to use the careers email.' }
+      - { name: open, label: Show on the site, widget: boolean, default: true }
+      - { name: body, label: Description, widget: markdown, required: false, hint: 'Shown under the role on the careers page. Keep it short.' }

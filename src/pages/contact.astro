@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import c from '../content/pages/contact.json';
+---
+<Base title={c.title} description={c.description}>
+
+  <section class="bay keep">
+    <h1>{c.headline}</h1>
+    <p class="say after-head">{c.standfirst}</p>
+    <dl class="facts">
+      {c.facts.map(f => (
+        <div class="fact">
+          <dt>{f.label}</dt>
+          <dd>{f.href ? <a href={f.href}>{f.value}</a> : f.value}</dd>
+        </div>
+      ))}
+    </dl>
+  </section>
+
+  <section class="bay bay-sunk">
+    <h2>{c.helpHeading}</h2>
+    <p class="say after-head">{c.helpBody}</p>
+    <div class="ledger">
+      {c.help.map(item => (
+        <article class="cell">
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+</Base>

@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+import c from '../content/pages/careers.json';
+
+const modules = import.meta.glob('../content/jobs/*.md', { eager: true });
+const jobs = Object.values(modules)
+  .filter(m => m.frontmatter && m.frontmatter.open !== false)
+  .map(m => ({ ...m.frontmatter, Content: m.Content }));
+
+// a role saved without an application link falls back to the careers inbox
+const applyHref = job => job.applyUrl
+  || `mailto:${c.applyEmail}?subject=${encodeURIComponent(job.title)}`;
+---
+<Base title={c.title} description={c.description}>
+
+  <section class="bay keep">
+    <h1>{c.headline}</h1>
+    <p class="say after-head">{c.standfirst}</p>
+    <div class="act">
+      <a class="push" href={`mailto:${c.applyEmail}`}>{c.interestAction}</a>
+    </div>
+  </section>
+
+  <section class="bay bay-sunk">
+    <h2>{c.workHeading}</h2>
+    <p class="say after-head">{c.workBody}</p>
+  </section>
+
+  <section class="bay">
+    <h2>{c.offerHeading}</h2>
+    <div class="ledger">
+      {c.offer.map(item => (
+        <article class="cell">
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="bay bay-sunk">
+    <h2>{c.rolesHeading}</h2>
+    {jobs.length > 0 ? (
+      <ul class="roll">
+        {jobs.map(job => (
+          <li class="rung">
+            <div class="rung-text">
+              <h3>{job.title}</h3>
+              <p>{job.location}{job.type ? ` · ${job.type}` : ''}</p>
+              <div class="rung-body"><job.Content /></div>
+            </div>
+            <a class="pull" href={applyHref(job)}>{c.roleAction}</a>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <>
+        <p class="say after-head">{c.rolesEmpty}</p>
+        <div class="aside">
+          <p>
+            {c.interestLead}
+            {' '}<a href={`mailto:${c.applyEmail}`}>{c.applyEmail}</a>.
+            {' '}{c.interestTail}
+          </p>
+        </div>
+      </>
+    )}
+  </section>
+
+</Base>

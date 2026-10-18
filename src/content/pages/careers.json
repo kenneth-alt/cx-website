@@ -1,0 +1,26 @@
+{
+  "title": "Careers — Citadel CX",
+  "description": "Work at Citadel CX. Customer support roles based in our Lagos office, with training, managed equipment and somewhere to go next.",
+  "headline": "Support work, treated as a profession.",
+  "standfirst": "We are building a team in Lagos handling customer conversations for companies abroad. The work is demanding and the standard is high, which is why we train properly and pay attention to how people progress.",
+
+  "workHeading": "What the work actually is",
+  "workBody": "You handle real customers for real companies, by email, chat or phone depending on the account. You work inside the client's own systems, you make judgment calls, and you own the outcome of the conversation. It is not a reading-from-a-script job. The contacts that reach us are usually the ones automation could not resolve, which means they need somebody who can think.",
+
+  "offerHeading": "What we provide",
+  "offer": [
+    { "title": "Training before you go live", "body": "Nobody is put in front of a customer until they know the product, the tools and the escalation rules." },
+    { "title": "A managed office", "body": "A proper working environment with reliable power and connectivity, on equipment we provide and maintain." },
+    { "title": "Evenings, not overnights", "body": "Covering North American hours from West Africa means an evening shift rather than a graveyard one." },
+    { "title": "Somewhere to go next", "body": "Senior agent, quality, team lead, training. We would rather promote from the floor than hire over it." }
+  ],
+
+  "interestAction": "Register your interest",
+
+  "rolesHeading": "Open roles",
+  "rolesEmpty": "We are not hiring yet. Our first roles should open soon, and we are glad to hear from people who want to be first in the queue.",
+  "interestLead": "Send a short note about yourself and any support, service or customer-facing experience you have to",
+  "interestTail": "We keep every application and come back to them when roles open.",
+  "roleAction": "Apply",
+  "applyEmail": "careers@citadelcx.com"
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Contact — Citadel CX",
+  "description": "Get in touch with Citadel CX about support delivery, security architecture, or working together.",
+  "headline": "Tell us what your support looks like today.",
+  "standfirst": "Whether you are handling it yourself, weighing a first hire, or already outsourcing and unhappy with it, we would like to hear about it. No deck, no pitch, just a conversation.",
+
+  "facts": [
+    { "label": "Email", "value": "info@citadelcx.com", "href": "mailto:info@citadelcx.com" },
+    { "label": "Based in", "value": "Calgary, Alberta, Canada" },
+    { "label": "We reply", "value": "Within one business day" }
+  ],
+
+  "helpHeading": "Useful things to mention",
+  "helpBody": "None of it is required, but it helps us give you a straight answer rather than a sales call.",
+  "help": [
+    { "title": "Roughly how much volume", "body": "Contacts per week, and whether that is email, chat, phone or a mix." },
+    { "title": "What you run today", "body": "The helpdesk or shared inbox your team works in, if you have one." },
+    { "title": "What is going wrong", "body": "Response times, cover outside hours, quality, cost — whichever it is." },
+    { "title": "Any requirements", "body": "Compliance obligations or security review processes we should know about." }
+  ]
+}

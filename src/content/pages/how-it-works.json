@@ -1,0 +1,60 @@
+{
+  "title": "How it works — Citadel CX",
+  "description": "How Citadel CX delivers support: agents working inside your own tools through managed virtual desktops hosted in Canada, with nothing persisting on agent devices.",
+  "headline": "Your tools. Our people. A controlled environment.",
+  "standfirst": "We do not ask you to move your helpdesk or change how your team works. Agents sign in to the systems you already run, from an environment we manage and you can inspect.",
+
+  "sequenceHeading": "From first conversation to live queue.",
+  "stages": [
+    {
+      "title": "We learn your product and your tone",
+      "body": "Before anyone touches a live conversation we work through your documentation, your past tickets and your escalation rules, and agree what agents decide themselves and what comes back to you."
+    },
+    {
+      "title": "Agents connect through a managed desktop",
+      "body": "Each agent signs in to a virtual desktop hosted in Canadian cloud infrastructure. The machine physically in front of them is a terminal: it stores nothing and cannot move files out of the session."
+    },
+    {
+      "title": "They work inside your systems",
+      "body": "Zendesk, Intercom, Salesforce, Shopify, your own admin panel. Agents use the tools you already pay for, under named accounts you control and can revoke at will."
+    },
+    {
+      "title": "You keep full visibility",
+      "body": "Reporting on volume, resolution and the themes behind the contacts. You see the same queue we do and can read any conversation at any time."
+    }
+  ],
+
+  "controlsHeading": "Controls you can demonstrate, not promise.",
+  "controls": [
+    {
+      "title": "Managed identity for every agent",
+      "body": "Single sign-on with multi-factor authentication. No shared logins, no passwords passed around, and a complete record of who reached what."
+    },
+    {
+      "title": "Non-persistent sessions",
+      "body": "Agent desktops hold no durable local state. Customer data lives in your systems and in Canadian-hosted infrastructure, and does not persist on agent devices."
+    },
+    {
+      "title": "A controlled floor",
+      "body": "Agents work from a managed office on company equipment, with clipboard, storage and device redirection restricted inside the session."
+    },
+    {
+      "title": "Separation between clients",
+      "body": "Each client's environment and credentials are isolated. An agent assigned to one account cannot reach another's systems."
+    },
+    {
+      "title": "Offboarding in one action",
+      "body": "Removing someone is a single change in our directory, and it takes effect across every connected system immediately."
+    },
+    {
+      "title": "Delivery stated plainly",
+      "body": "You will always know where your support is delivered from and what infrastructure it runs on. It goes in the contract, not the brochure."
+    }
+  ],
+
+  "asideBody": "Working through a security review? We will walk you through the architecture, the hosting region and the contractual terms that go with it. Ask and we send the detail.",
+
+  "closeHeading": "Want the technical detail?",
+  "closeBody": "Happy to go deeper on any of it — architecture, data flows, subprocessors, or how we would handle your particular compliance requirements.",
+  "closeAction": { "label": "Ask us", "href": "/contact" }
+}

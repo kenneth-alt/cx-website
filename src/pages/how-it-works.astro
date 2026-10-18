@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import c from '../content/pages/how-it-works.json';
+---
+<Base title={c.title} description={c.description}>
+
+  <section class="bay keep">
+    <h1>{c.headline}</h1>
+    <p class="say after-head">{c.standfirst}</p>
+  </section>
+
+  <section class="bay bay-sunk">
+    <h2>{c.sequenceHeading}</h2>
+    <div class="sequence">
+      {c.stages.map((stage, i) => (
+        <article class="stage">
+          <span class="stage-no" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+          <div>
+            <h3>{stage.title}</h3>
+            <p>{stage.body}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="bay">
+    <h2>{c.controlsHeading}</h2>
+    <div class="ledger">
+      {c.controls.map(item => (
+        <article class="cell">
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+        </article>
+      ))}
+    </div>
+    <div class="aside">
+      <p>{c.asideBody}</p>
+    </div>
+  </section>
+
+  <section class="bay bay-sunk">
+    <h2>{c.closeHeading}</h2>
+    <p class="say after-head">{c.closeBody}</p>
+    <div class="act">
+      <a class="push" href={c.closeAction.href}>{c.closeAction.label}</a>
+    </div>
+  </section>
+
+</Base>

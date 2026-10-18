@@ -1,0 +1,155 @@
+---
+import '../styles/global.css';
+import Sigil from '../components/Sigil.astro';
+
+const { title, description } = Astro.props;
+const here = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+const ways = [
+  { href: '/',             label: 'Home' },
+  { href: '/how-it-works', label: 'How it works' },
+  { href: '/about',        label: 'About' },
+  { href: '/careers',      label: 'Careers' },
+  { href: '/contact',      label: 'Contact' },
+];
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" />
+  <script is:inline>
+    // set theme before paint so there is no flash
+    try {
+      const saved = localStorage.getItem('citadel-theme');
+      const dark = saved ? saved === 'dark'
+        : !window.matchMedia('(prefers-color-scheme: light)').matches;
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    } catch (e) {
+      document.documentElement.dataset.theme = 'dark';
+    }
+  </script>
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="sigil" href="/">
+        <Sigil />
+        <span>Citadel CX</span>
+      </a>
+      <div class="masthead-right">
+        <nav class="ways" id="ways" aria-label="Main">
+          {ways.map(w => (
+            <a href={w.href} aria-current={here === w.href ? 'page' : undefined}>{w.label}</a>
+          ))}
+        </nav>
+
+        <button class="hatch" type="button" data-menu aria-expanded="false" aria-controls="ways" aria-label="Open menu">
+          <span class="hatch-bars" aria-hidden="true"><i></i><i></i></span>
+        </button>
+
+        <button class="lamp" type="button" data-lamp>
+          <svg class="lamp-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4.4" />
+            <path d="M12 1.6v3M12 19.4v3M1.6 12h3M19.4 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M19.4 4.6l-2.1 2.1M6.7 17.3l-2.1 2.1" />
+          </svg>
+          <svg class="lamp-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M20.2 14.4A8.6 8.6 0 1 1 9.6 3.8a6.9 6.9 0 0 0 10.6 10.6z" />
+          </svg>
+          <span class="lamp-text" data-lamp-text>Light</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <slot />
+  </main>
+
+  <footer class="base">
+    <div class="base-inner">
+      <span>Citadel CX &middot; Calgary, Canada</span>
+      <span>
+        <a href="mailto:info@citadelcx.com">info@citadelcx.com</a>
+      </span>
+    </div>
+  </footer>
+
+  <script is:inline>
+    (function () {
+      const root = document.documentElement;
+      const lamp = document.querySelector('[data-lamp]');
+      const text = document.querySelector('[data-lamp-text]');
+
+      function paint() {
+        const dark = root.dataset.theme === 'dark';
+        // the control names where it takes you, not where you are —
+        // so it is an action button, not a pressed/unpressed toggle
+        text.textContent = dark ? 'Light' : 'Dark';
+        lamp.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
+
+      paint();
+
+      lamp.addEventListener('click', function () {
+        root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        try { localStorage.setItem('citadel-theme', root.dataset.theme); } catch (e) {}
+        paint();
+      });
+
+      // follow the system setting until someone picks for themselves
+      const mq = window.matchMedia('(prefers-color-scheme: dark)');
+      mq.addEventListener('change', function (e) {
+        try { if (localStorage.getItem('citadel-theme')) return; } catch (err) {}
+        root.dataset.theme = e.matches ? 'dark' : 'light';
+        paint();
+      });
+
+      // collapsed menu on narrow screens
+      const hatch = document.querySelector('[data-menu]');
+      const ways = document.getElementById('ways');
+
+      function setMenu(open) {
+        hatch.setAttribute('aria-expanded', String(open));
+        hatch.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        document.body.classList.toggle('menu-open', open);
+      }
+
+      hatch.addEventListener('click', function () {
+        setMenu(hatch.getAttribute('aria-expanded') !== 'true');
+      });
+
+      ways.addEventListener('click', function (e) {
+        if (e.target.closest('a')) setMenu(false);
+      });
+
+      // a tap anywhere outside the menu and its button closes it
+      document.addEventListener('click', function (e) {
+        if (hatch.getAttribute('aria-expanded') !== 'true') return;
+        if (ways.contains(e.target) || hatch.contains(e.target)) return;
+        setMenu(false);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && hatch.getAttribute('aria-expanded') === 'true') {
+          setMenu(false);
+          hatch.focus();
+        }
+      });
+
+      // if the viewport grows past the breakpoint, drop the collapsed state
+      window.matchMedia('(min-width: 761px)').addEventListener('change', function (e) {
+        if (e.matches) setMenu(false);
+      });
+    })();
+  </script>
+
+</body>
+</html>

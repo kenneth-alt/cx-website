@@ -1,0 +1,61 @@
+---
+import Base from '../layouts/Base.astro';
+import HeroArt from '../components/HeroArt.astro';
+import c from '../content/pages/home.json';
+---
+<Base title={c.title} description={c.description}>
+
+  <section class="bay keep">
+    <div class="keep-grid">
+      <div>
+        <h1>{c.headline}</h1>
+        <p class="say after-head">{c.standfirst}</p>
+        <div class="act">
+          <a class="push" href={c.primaryAction.href}>{c.primaryAction.label}</a>
+          <a class="pull" href={c.secondaryAction.href}>{c.secondaryAction.label}</a>
+        </div>
+      </div>
+
+      <HeroArt />
+    </div>
+  </section>
+
+  <section class="bay bay-sunk bay-strip" aria-labelledby="spec-heading">
+    <h2 class="unseen" id="spec-heading">{c.specHeading}</h2>
+    <dl class="spec">
+      {c.spec.map(row => (
+        <div class="spec-row">
+          <dt>{row.label}</dt>
+          <dd>{row.value}</dd>
+        </div>
+      ))}
+    </dl>
+  </section>
+
+  <section class="bay">
+    <h2>{c.caseHeading}</h2>
+    <p class="say after-head">{c.caseBody}</p>
+  </section>
+
+  <section class="bay bay-sunk">
+    <h2>{c.controlsHeading}</h2>
+    <p class="say after-head">{c.controlsBody}</p>
+    <div class="ledger">
+      {c.controls.map(item => (
+        <article class="cell">
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="bay">
+    <h2>{c.closeHeading}</h2>
+    <p class="say after-head">{c.closeBody}</p>
+    <div class="act">
+      <a class="push" href={c.closeAction.href}>{c.closeAction.label}</a>
+    </div>
+  </section>
+
+</Base>
